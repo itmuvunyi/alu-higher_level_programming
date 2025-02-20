@@ -3,5 +3,5 @@ a = 1
 b = 2
 # Switch the values of a and b
 a, b = b, a
-print("a =", a)
-print("b =", b)
+print(a)
+print(b)
