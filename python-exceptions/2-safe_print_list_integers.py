@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 def safe_print_list(my_list=[], x=0):
     count = 0
     try:
@@ -10,6 +12,7 @@ def safe_print_list(my_list=[], x=0):
     print()
     return count
 
+
 def safe_print_integer(value):
     try:
         print("{:d}".format(value))
@@ -17,17 +20,15 @@ def safe_print_integer(value):
     except (ValueError, TypeError):
         return False
 
+
 def safe_print_list_integers(my_list=[], x=0):
     count = 0
-    try:
-        for i in range(x):
-            try:
-                print("{:d}".format(my_list[i]), end='')
-                count += 1
-            except (ValueError, TypeError):
-                continue
-    except IndexError:
-        pass
+    for i in range(x):
+        try:
+            print("{:d}".format(my_list[i]), end='')
+            count += 1
+        except (ValueError, TypeError):
+            continue
     print()
     return count
 
