@@ -9,12 +9,14 @@ def safe_print_list(my_list=[], x=0):
         pass
     print()
     return count
+
 def safe_print_integer(value):
     try:
         print("{:d}".format(value))
         return True
     except (ValueError, TypeError):
         return False
+
 def safe_print_list_integers(my_list=[], x=0):
     count = 0
     try:
