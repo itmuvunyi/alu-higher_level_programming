@@ -1,19 +1,31 @@
 #!/usr/bin/python3
+def safe_print_list(my_list=[], x=0):
+    count = 0
+    try:
+        for i in range(x):
+            print(my_list[i], end='')
+            count += 1
+    except IndexError:
+        pass
+    print()
+    return count
+def safe_print_integer(value):
+    try:
+        print("{:d}".format(value))
+        return True
+    except (ValueError, TypeError):
+        return False
 def safe_print_list_integers(my_list=[], x=0):
-    printed = 0
-    for i in range(x):
-        try:
-            # Attempt to access the element at index i.
-            element = my_list[i]
-        except Exception:
-            # If the element cannot be accessed, break out of the loop.
-            break
-        try:
-            # Try to print the element as an integer.
-            print("{:d}".format(element), end=" ")
-            printed += 1
-        except Exception:
-            # If formatting fails, skip this element.
-            continue
-    print("")
-    return printed
+    count = 0
+    try:
+        for i in range(x):
+            try:
+                print("{:d}".format(my_list[i]), end='')
+                count += 1
+            except (ValueError, TypeError):
+                continue
+    except IndexError:
+        pass
+    print()
+    return count
+
