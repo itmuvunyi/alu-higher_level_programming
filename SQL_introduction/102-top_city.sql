@@ -1,8 +1,7 @@
--- This script lists the top 3 cities with the highest temperatures in July and August
--- It orders the cities by temperature in descending order.
+-- This script displays the top 3 cities' temperatures during July and August ordered by temperature (descending).
 
-SELECT city, temperature, month
-FROM city_temperature
-WHERE month IN (7, 8)  -- 7 for July and 8 for August
+SELECT city, temperature
+FROM city_temperature  -- Replace with the correct table name
+WHERE month IN (7, 8)  -- July (7) and August (8)
 ORDER BY temperature DESC
 LIMIT 3;
