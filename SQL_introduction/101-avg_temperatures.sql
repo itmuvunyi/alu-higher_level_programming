@@ -1,6 +1,6 @@
--- This script calculates the average temperature by city, ordered by temperature (descending).
-
-SELECT city, AVG(temperature) AS avg_temp
-FROM city_temperature  -- Replace with the correct table name
+-- A script that displays the average temperature (Fahrenheit) by city ordered by temperature (descending)
+-- Query to display the average temperature of a city
+SELECT city, AVG(value) AS avg_temp
+FROM temperatures
 GROUP BY city
 ORDER BY avg_temp DESC;
