@@ -1,22 +1,14 @@
 #!/usr/bin/python3
-""" Python script that fetches https://intranet.hbtn.io/status """
+"""Fetches data from a local server and displays response details."""
+
 import urllib.request
-import urllib.error
 
 if __name__ == "__main__":
-    url = "https://intranet.hbtn.io/status"
-    headers = {"User-Agent": "Mozilla/5.0"}
+    url = "http://0.0.0.0:5050/status"
 
-    req = urllib.request.Request(url, headers=headers)
-    
-    try:
-        with urllib.request.urlopen(req) as response:
-            html = response.read()
-            print('Body response:')
-            print('\t- type: {}'.format(type(html)))
-            print('\t- content: {}'.format(html))
-            print('\t- utf8 content: {}'.format(html.decode("utf-8")))
-    except urllib.error.HTTPError as e:
-        print(f"HTTP Error: {e.code} - {e.reason}")
-    except urllib.error.URLError as e:
-        print(f"URL Error: {e.reason}")
+    with urllib.request.urlopen(url) as response:
+        html = response.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(html)))
+        print("\t- content: {}".format(html))
+        print("\t- utf8 content: {}".format(html.decode("utf-8")))
