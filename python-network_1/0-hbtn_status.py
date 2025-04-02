@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-""" Python script that fetches https://alu-intranet.hbtn.io/status """
+""" Python script that fetches https://intranet.aluswe.com/status """
 import urllib.request
 
 
 if __name__ == "__main__":
-    with urllib.request.urlopen('https://alu-intranet.hbtn.io/status') as response:
+    with urllib.request.urlopen('https://intranet.aluswe.com/status') as response:
         html = response.read()
         print('Body response:')
         print('\t- type: {}'.format(type(html)))
