@@ -1,10 +1,20 @@
 #!/usr/bin/node
+const myObject = {
+  type: 'object',
+  value: 12
+};
+console.log(myObject);
 
-function incr (number) {
-  return number + 1;
-}
+/*
+YOUR CODE HERE
+*/
+myObject.incr = function () {
+  this.value += 1;
+};
 
-// Example usage:
-const num = 5;
-const incrementedNum = incr(num);
-console.log(incrementedNum); // Output: 6
+myObject.incr();
+console.log(myObject);
+myObject.incr();
+console.log(myObject);
+myObject.incr();
+console.log(myObject);
