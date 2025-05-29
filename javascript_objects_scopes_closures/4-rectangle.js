@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 class Rectangle {
-  constructor(w, h) {
+  constructor (w, h) {
     if (
       Number.isInteger(w) && w > 0 &&
       Number.isInteger(h) && h > 0
@@ -12,7 +12,7 @@ class Rectangle {
     // Else, leave the object empty (no properties)
   }
 
-  print() {
+  print () {
     if (!this.width || !this.height) return;
 
     for (let i = 0; i < this.height; i++) {
@@ -20,7 +20,7 @@ class Rectangle {
     }
   }
 
-  rotate() {
+  rotate () {
     if (!this.width || !this.height) return;
 
     const temp = this.width;
@@ -28,7 +28,7 @@ class Rectangle {
     this.height = temp;
   }
 
-  double() {
+  double () {
     if (!this.width || !this.height) return;
 
     this.width *= 2;
